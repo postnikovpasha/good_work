@@ -3,6 +3,7 @@ package com.example.autapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.autapplication.works.HomeActivity
 import kotlinx.android.synthetic.main.activity_add.*
 
 class AddActivity : AppCompatActivity() {
