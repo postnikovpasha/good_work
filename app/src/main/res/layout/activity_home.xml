@@ -18,9 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            app:srcCompat="@drawable/ic_dashboard_black_24dp"
+            app:srcCompat="@drawable/ic_add_black_24dp"
             app:layout_constraintBottom_toTopOf="@id/navigation"
             app:layout_constraintEnd_toEndOf="parent"
+            app:backgroundTint="@color/colorTheme"
             android:layout_margin="16dp"
             tools:layout_editor_absoluteY="601dp"
             tools:layout_editor_absoluteX="325dp"/>
