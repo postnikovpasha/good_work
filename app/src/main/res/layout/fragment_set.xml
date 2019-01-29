@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".SetFragment">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="100dp"
+            android:paddingBottom="100dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="32dp"
+            tools:layout_editor_absoluteX="0dp">
+
+    <EditText
+            android:id="@+id/lastPass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Last password"
+            android:padding="10dp"/>
+
+    <EditText
+            android:id="@+id/newPass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="New password"
+            android:padding="10dp"/>
+
+    <!-- Login Button -->
+
+    <Button
+            android:id="@+id/btnChange"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="Change"/>
+    </LinearLayout>
+
+</FrameLayout>

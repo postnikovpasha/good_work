@@ -14,21 +14,21 @@ class SetActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set)
 
-        navigation2.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.action_search-> {
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.action_settings -> {
 
-                    val intent = Intent(this, SetActivity::class.java)
-                    startActivity(intent)
-                    true
-                }else -> false
-            }
-        }
+//        navigation2.setOnNavigationItemSelectedListener {
+//            when(it.itemId){
+//                R.id.action_search-> {
+//                    val intent = Intent(this, HomeActivity::class.java)
+//                    startActivity(intent)
+//                    true
+//                }
+//                R.id.action_settings -> {
+//                    val intent = Intent(this, SetActivity::class.java)
+//                    startActivity(intent)
+//                    true
+//                }else -> false
+//            }
+//        }
 
 
     }
