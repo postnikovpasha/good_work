@@ -13,23 +13,23 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val songsFragment = HomeFragment.newInstance()
-        openFragment(songsFragment)
+        val homeFragment = HomeFragment.newInstance()
+        openFragment(homeFragment)
 
 
         navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.action_search-> {
 
-                    val songsFragment = HomeFragment.newInstance()
-                    openFragment(songsFragment)
+                    val homeFragment = HomeFragment.newInstance()
+                    openFragment(homeFragment)
 //                    val intent = Intent(this, HomeActivity::class.java)
 //                    startActivity(intent)
                   true
                 }
                 R.id.action_settings -> {
-                    val artistsFragment = SetFragment.newInstance()
-                    openFragment(artistsFragment)
+                    val setFragment = SetFragment.newInstance()
+                    openFragment(setFragment)
 //                    val intent = Intent(this, SetActivity::class.java)
 //                    startActivity(intent)
                     true

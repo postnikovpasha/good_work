@@ -19,14 +19,15 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_home, container, false)
 
+//    fab.setOnClickListener {
+//        val intent = Intent(this, AddActivity::class.java)
+//        startActivity(intent)
+//    }
+
     companion object {
         fun newInstance(): HomeFragment = HomeFragment()
     }
 
-/*        fab.setOnClickListener {
-            val intent = Intent(this, AddActivity::class.java)
-            startActivity(intent)
-        }*/
 
 
 }
