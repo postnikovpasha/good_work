@@ -15,6 +15,7 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
+        getSupportActionBar()!!.hide();
 
         btnAuth.setOnClickListener {
             val login = loginEditText.text.toString()
