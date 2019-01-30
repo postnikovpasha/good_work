@@ -32,5 +32,6 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(work: Work) {
         itemView.works_name.text = work.problem_title
         itemView.works_description.text = work.problem_description
+        itemView.works_coins.text = work.coins
     }
 }
