@@ -41,9 +41,23 @@
         <EditText
                 android:id="@+id/coinsEditText"
                 android:layout_width="0dp"
-                  android:inputType="number"
-                  android:layout_height="wrap_content"
-                  android:layout_weight=".50"/>
+                android:inputType="number"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"/>
+
+        <TextView
+                android:id="@+id/customer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:text="Customer"
+                android:textSize="20sp"
+        />
+        <EditText
+                android:id="@+id/customerEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"/>
     </LinearLayout>
     <Button
             android:text="Add"
