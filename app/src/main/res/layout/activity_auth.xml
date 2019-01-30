@@ -24,7 +24,7 @@
                   android:gravity="center"
                   android:layout_marginBottom="10dp"
                   android:text="Authorization"
-                  android:textSize="20sp"/>
+                  android:textSize="30sp"/>
 
         <EditText
                 android:id="@+id/loginEditText"
@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Login"
+                android:textSize="20sp"
                 android:padding="10dp"/>
 
         <EditText
@@ -40,6 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Password"
+                android:inputType="textPassword"
+                android:textSize="20sp"
                 android:padding="10dp"/>
 
         <!-- Login Button -->
