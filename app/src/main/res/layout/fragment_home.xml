@@ -9,7 +9,6 @@
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/worksRecyclerView"
-            android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
@@ -22,8 +21,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:backgroundTint="@color/colorTheme"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="15dp"
-            tools:layout_editor_absoluteY="601dp"
-            tools:layout_editor_absoluteX="325dp"/>
+            android:layout_marginBottom="15dp"/>
 
 </FrameLayout>
