@@ -1,10 +1,13 @@
 package com.example.autapplication.works
 
+import android.content.Intent
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.autapplication.LookActivity
 import com.example.autapplication.R
 import com.example.autapplication.model.response.Work
 import kotlinx.android.synthetic.main.works_item.view.*
@@ -37,6 +40,8 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         itemView.setOnClickListener {
             Toast.makeText(itemView.context, "ItemClicked", Toast.LENGTH_LONG).show()
+            val intent = Intent(itemView.context, LookActivity::class.java)
+            startActivity(itemView.context, intent, null)
         }
     }
 }
