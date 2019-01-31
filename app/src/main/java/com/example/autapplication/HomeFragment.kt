@@ -50,6 +50,22 @@ class HomeFragment : Fragment(), WorksView {
 
         val recyclerView = worksRecyclerView
 
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                if (dy > 0 || dy < 0 && fab.isShown) {
+                    fab.hide()
+                }
+            }
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    fab.show()
+                }
+
+                super.onScrollStateChanged(recyclerView, newState)
+            }
+        })
+
     }
 
     companion object {
@@ -70,6 +86,8 @@ class HomeFragment : Fragment(), WorksView {
         adapter.setWorks(works)
     }
 
-
+    override fun showMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    }
 
 }

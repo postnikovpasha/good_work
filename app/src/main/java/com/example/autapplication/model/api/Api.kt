@@ -20,4 +20,7 @@ interface Api {
                  @Query("customer") customer: String,
                  @Query("coins") coins: String): Call<ServerResponse>
 
+    @GET("user?login")
+    fun getCoins(@Query("customer") customer: String): Call<ServerResponse>
+
 }

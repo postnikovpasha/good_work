@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.autapplication.LookActivity
 import com.example.autapplication.R
 import com.example.autapplication.model.response.Work
+import kotlinx.android.synthetic.main.fragment_set.view.*
 import kotlinx.android.synthetic.main.works_item.view.*
 
 class WorksAdapter : RecyclerView.Adapter<WorkHolder>() {
@@ -43,5 +44,6 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
             val intent = Intent(itemView.context, LookActivity::class.java)
             startActivity(itemView.context, intent, null)
         }
+
     }
 }
