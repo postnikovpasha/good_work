@@ -70,6 +70,8 @@ class HomeFragment : Fragment(), WorksView {
         adapter.setWorks(works)
     }
 
-
+    override fun showMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    }
 
 }

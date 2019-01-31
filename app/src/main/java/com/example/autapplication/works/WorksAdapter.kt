@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.autapplication.R
 import com.example.autapplication.model.response.Work
+import kotlinx.android.synthetic.main.fragment_set.view.*
 import kotlinx.android.synthetic.main.works_item.view.*
 
 class WorksAdapter : RecyclerView.Adapter<WorkHolder>() {
@@ -38,5 +39,6 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.setOnClickListener {
             Toast.makeText(itemView.context, "ItemClicked", Toast.LENGTH_LONG).show()
         }
+
     }
 }
