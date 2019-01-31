@@ -21,9 +21,9 @@ class AddActivity : AppCompatActivity() {
 
         btnAdd.setOnClickListener {
             val work: Work = Work(
-                problem_title = titelEditText.text.toString(),
-                problem_description = dedcriptionEditText.text.toString(),
-                customer = customerEditText.text.toString(),
+                problem_title = titleEditText.text.toString(),
+                problem_description = descriptionEditText.text.toString(),
+                customer = "",
                 coins = coinsEditText.text.toString()
             )
             App.api
