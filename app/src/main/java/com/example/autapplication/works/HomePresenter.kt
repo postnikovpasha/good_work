@@ -17,8 +17,7 @@ class HomePresenter {
     }
 
     private fun updateWorks() {
-        App.retrofit
-            .create(Api::class.java)
+        App.api
             .getAllWorks()
             .enqueue(object : Callback<List<Work>> {
                 override fun onFailure(call: Call<List<Work>>, t: Throwable) {
