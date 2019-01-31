@@ -58,7 +58,7 @@
 
     <EditText
             android:id="@+id/coinsEditText"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:hint="coins"
             android:gravity="center"
             android:backgroundTint="#0066ff"
