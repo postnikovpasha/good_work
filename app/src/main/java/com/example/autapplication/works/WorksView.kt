@@ -4,4 +4,5 @@ import com.example.autapplication.model.response.Work
 
 interface WorksView {
     fun showWorks(works: List<Work>)
+    fun showMessage(message: String)
 }
