@@ -6,13 +6,18 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
+import java.util.*
 
 interface Api {
 
     @GET("get_problems")
     fun getAllWorks(): Call<List<Work>>
 
-    @POST("login?customer")
-    fun sendWork(@Body work: Work): Call<ServerResponse>
+    @GET("create_task")
+    fun sendWork(@Query("title") problem_title: String,
+                 @Query("description") problem_description: String,
+                 @Query("customer") customer: String,
+                 @Query("coins") coins: String): Call<ServerResponse>
 
 }

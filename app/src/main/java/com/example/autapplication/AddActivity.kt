@@ -23,11 +23,11 @@ class AddActivity : AppCompatActivity() {
             val work: Work = Work(
                 problem_title = titleEditText.text.toString(),
                 problem_description = descriptionEditText.text.toString(),
-                customer = "",
+                customer = "user",
                 coins = coinsEditText.text.toString()
             )
             App.api
-                .sendWork(work)
+                .sendWork(work.problem_title, work.problem_description, work.customer, work.coins)
                 .enqueue(object : Callback<ServerResponse> {
                     override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
                         showError(t.message ?: "Unknown error")
