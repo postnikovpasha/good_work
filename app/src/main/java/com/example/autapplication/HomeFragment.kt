@@ -1,10 +1,9 @@
 package com.example.autapplication
 
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -17,12 +16,10 @@ import com.example.autapplication.works.WorksView
 
 
 import kotlinx.android.synthetic.main.fragment_home.*
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.Toast
 
 
 class HomeFragment : Fragment(), WorksView {
-
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,8 +30,20 @@ class HomeFragment : Fragment(), WorksView {
 
     }
 
-    private val adapter = WorksAdapter()
-    private val presener = HomePresenter()
+    private val adapter = WorksAdapter {
+        showLookScreen(it)
+    }
+
+    private val presenter = HomePresenter()
+
+    private fun showLookScreen(work: Work) {
+        val intent = Intent(requireContext(), LookActivity::class.java)
+            .putExtra("title", work.problem_title)
+            .putExtra("description", work.problem_description)
+            .putExtra("coins", work.coins)
+
+        startActivity(intent)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +52,7 @@ class HomeFragment : Fragment(), WorksView {
         worksRecyclerView.layoutManager = LinearLayoutManager(context)
         worksRecyclerView.adapter = adapter
 
-        fab.setOnClickListener{
+        fab.setOnClickListener {
             val intent = Intent(context, AddActivity::class.java)
             startActivity(intent)
         }
@@ -72,14 +81,15 @@ class HomeFragment : Fragment(), WorksView {
         fun newInstance(): HomeFragment = HomeFragment()
 
     }
+
     override fun onStart() {
         super.onStart()
-        presener.bindView(this)
+        presenter.bindView(this)
     }
 
     override fun onStop() {
         super.onStop()
-        presener.unbindView()
+        presenter.unbindView()
     }
 
     override fun showWorks(works: List<Work>) {

@@ -13,7 +13,7 @@ import com.example.autapplication.model.response.Work
 import kotlinx.android.synthetic.main.fragment_set.view.*
 import kotlinx.android.synthetic.main.works_item.view.*
 
-class WorksAdapter : RecyclerView.Adapter<WorkHolder>() {
+class WorksAdapter(private val onWorkClick: (Work) -> Unit) : RecyclerView.Adapter<WorkHolder>() {
 
     private val works: MutableList<Work> = mutableListOf()
 
@@ -23,7 +23,9 @@ class WorksAdapter : RecyclerView.Adapter<WorkHolder>() {
     override fun getItemCount(): Int = works.size
 
     override fun onBindViewHolder(holder: WorkHolder, position: Int) {
-        holder.bind(works[position])
+        val work = works[position]
+        holder.itemView.setOnClickListener { onWorkClick(work) }
+        holder.bind(work)
     }
 
     fun setWorks(works: List<Work>) {
@@ -38,12 +40,5 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.works_name.text = work.problem_title
         itemView.works_description.text = work.problem_description
         itemView.works_coins.text = work.coins
-
-        itemView.setOnClickListener {
-            Toast.makeText(itemView.context, "ItemClicked", Toast.LENGTH_LONG).show()
-            val intent = Intent(itemView.context, LookActivity::class.java)
-            startActivity(itemView.context, intent, null)
-        }
-
     }
 }
