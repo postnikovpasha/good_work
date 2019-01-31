@@ -30,6 +30,15 @@ class HomePresenter {
                     view?.showWorks(listOf(
                         Work("Vitya","SSD (fake)","Need SSD","35"),
                         Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
+                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
+                        Work("Vitya","SSD (fake)","Need SSD","35"),
+                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
+                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
+                        Work("Vitya","SSD (fake)","Need SSD","35"),
+                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
+                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
+                        Work("Vitya","SSD (fake)","Need SSD","35"),
+                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
                         Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20")
                     ))
 
