@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.autapplication.R
 import com.example.autapplication.model.response.Work
 import kotlinx.android.synthetic.main.works_item.view.*
@@ -33,5 +34,9 @@ class WorkHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.works_name.text = work.problem_title
         itemView.works_description.text = work.problem_description
         itemView.works_coins.text = work.coins
+
+        itemView.setOnClickListener {
+            Toast.makeText(itemView.context, "ItemClicked", Toast.LENGTH_LONG).show()
+        }
     }
 }
