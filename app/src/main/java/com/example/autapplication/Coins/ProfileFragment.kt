@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.example.autapplication.R
 import kotlinx.android.synthetic.main.fragment_profile.*
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 
 
 class ProfileFragment : Fragment(), CoinsView {
@@ -16,17 +18,20 @@ class ProfileFragment : Fragment(), CoinsView {
     private val presenter = ProfilePresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_profile, container, false)
+        inflater.inflate(com.example.autapplication.R.layout.fragment_profile, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.bindView(this)
-        presenter.onViewShown()
 
+        val customer = getArguments()?.getString("customer")
+        if (customer != null) {
+            presenter.onViewShown(customer)
+        }
 
 
         btnChange.setOnClickListener{
-            val scale = AnimationUtils.loadAnimation(requireContext(), R.anim.scale)
+            val scale = AnimationUtils.loadAnimation(requireContext(), com.example.autapplication.R.anim.scale)
             it.startAnimation(scale)
             Toast.makeText(requireContext(), "Oops..out of service", Toast.LENGTH_SHORT).show()
         }
