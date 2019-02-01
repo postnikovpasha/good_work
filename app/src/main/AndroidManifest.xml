@@ -11,11 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher2_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".LookActivity"
-                  android:screenOrientation="portrait"
-        ></activity>
+                  android:screenOrientation="portrait"/>
         <activity android:name=".SplashActivity">
             android:screenOrientation="portrait"
             <intent-filter>
