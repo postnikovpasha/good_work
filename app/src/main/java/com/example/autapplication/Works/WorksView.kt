@@ -1,6 +1,6 @@
-package com.example.autapplication.works
+package com.example.autapplication.Works
 
-import com.example.autapplication.model.response.Work
+import com.example.autapplication.Model.Response.Work
 
 interface WorksView {
     fun showWorks(works: List<Work>)

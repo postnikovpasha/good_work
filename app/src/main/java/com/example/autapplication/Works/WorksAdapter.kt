@@ -1,16 +1,11 @@
-package com.example.autapplication.works
+package com.example.autapplication.Works
 
-import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.example.autapplication.LookActivity
 import com.example.autapplication.R
-import com.example.autapplication.model.response.Work
-import kotlinx.android.synthetic.main.fragment_profile.view.*
+import com.example.autapplication.Model.Response.Work
 import kotlinx.android.synthetic.main.works_item.view.*
 
 class WorksAdapter(private val onWorkClick: (Work) -> Unit) : RecyclerView.Adapter<WorkHolder>() {

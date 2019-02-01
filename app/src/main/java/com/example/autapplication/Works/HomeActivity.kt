@@ -1,18 +1,12 @@
-package com.example.autapplication.works
+package com.example.autapplication.Works
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
-import com.example.autapplication.HomeFragment
+import com.example.autapplication.OtherActivityAndFragments.HomeFragment
 import com.example.autapplication.R
-import com.example.autapplication.ProfileFragment
+import com.example.autapplication.Coins.ProfileFragment
 import kotlinx.android.synthetic.main.activity_home.*
-import android.content.SharedPreferences
-
-
-
 
 
 class HomeActivity : AppCompatActivity() {

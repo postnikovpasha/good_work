@@ -1,9 +1,11 @@
-package com.example.autapplication
+package com.example.autapplication.OtherActivityAndFragments
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
+import com.example.autapplication.R
+import com.example.autapplication.SignIn.AuthActivity
 
 
 class SplashActivity : AppCompatActivity() {
