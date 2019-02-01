@@ -1,15 +1,12 @@
-package com.example.autapplication.model.api
+package com.example.autapplication.Model.Api
 
-import com.example.autapplication.model.response.CoinsResponse
-import com.example.autapplication.model.response.ServerResponse
-import com.example.autapplication.model.response.SignInResponse
-import com.example.autapplication.model.response.Work
+import com.example.autapplication.Model.Response.CoinsResponse
+import com.example.autapplication.Model.Response.ServerResponse
+import com.example.autapplication.Model.Response.SignInResponse
+import com.example.autapplication.Model.Response.Work
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.Query
-import java.util.*
 
 interface Api {
 

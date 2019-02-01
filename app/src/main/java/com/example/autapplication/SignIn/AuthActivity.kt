@@ -1,15 +1,12 @@
-package com.example.autapplication
+package com.example.autapplication.SignIn
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import com.example.autapplication.App.Companion.api
-import com.example.autapplication.works.HomeActivity
-import com.example.autapplication.works.SignInPresenter
-import com.example.autapplication.works.SignInView
+import com.example.autapplication.R
+import com.example.autapplication.Works.HomeActivity
 import kotlinx.android.synthetic.main.activity_auth.*
 
 
@@ -53,7 +50,7 @@ class AuthActivity : AppCompatActivity(), SignInView {
     }
 
     override fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun navigateToHomeScreen() {

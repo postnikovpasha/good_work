@@ -1,22 +1,22 @@
-package com.example.autapplication
+package com.example.autapplication.OtherActivityAndFragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.autapplication.model.response.Work
-import com.example.autapplication.works.HomePresenter
-import com.example.autapplication.works.WorksAdapter
-import com.example.autapplication.works.WorksView
+import com.example.autapplication.Model.Response.Work
+import com.example.autapplication.Works.HomePresenter
+import com.example.autapplication.Works.WorksAdapter
+import com.example.autapplication.Works.WorksView
 
 
 import kotlinx.android.synthetic.main.fragment_home.*
 import android.widget.Toast
+import com.example.autapplication.R
 
 
 class HomeFragment : Fragment(), WorksView {
@@ -89,7 +89,8 @@ class HomeFragment : Fragment(), WorksView {
     }
 
     companion object {
-        fun newInstance(): HomeFragment = HomeFragment()
+        fun newInstance(): HomeFragment =
+            HomeFragment()
 
     }
 
