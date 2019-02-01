@@ -10,7 +10,7 @@ import com.example.autapplication.works.HomeActivity
 import kotlinx.android.synthetic.main.activity_look.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.support.v4.view.ViewCompat
-
+import kotlinx.android.synthetic.main.activity_add.*
 
 
 class LookActivity : AppCompatActivity() {
@@ -19,11 +19,16 @@ class LookActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_look)
 
+
         val arguments = intent.extras ?: return
 
         titleTextView.text = arguments.getString("title")
         descriptionTextView.text = arguments.getString("description")
         coinsTextView.text = arguments.getString("coins")
+
+        btnBack2.setOnClickListener {
+            finish()
+        }
 
         btnDone.setOnClickListener {
             Toast.makeText(this, "Error: Unable connect to server",Toast.LENGTH_SHORT).show()
