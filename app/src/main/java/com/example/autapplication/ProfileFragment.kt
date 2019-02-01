@@ -39,7 +39,7 @@ class ProfileFragment : Fragment(), CoinsView{
     }
 
     override fun showCoins(coins: Int) {
-        coinsSum.text = coins.toString()
+        coinsSum?.text = coins.toString()
     }
 
     override fun showMessage(message: String) {
