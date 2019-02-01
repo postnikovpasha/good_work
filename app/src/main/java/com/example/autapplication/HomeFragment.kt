@@ -30,7 +30,17 @@ class HomeFragment : Fragment(), WorksView {
 
     }
 
-    private val adapter = WorksAdapter {
+    private var View.isVisible: Boolean
+        get() = visibility == View.VISIBLE
+        set(value) {
+            visibility = if (value) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+
+    val adapter = WorksAdapter {
         showLookScreen(it)
     }
 
@@ -100,4 +110,15 @@ class HomeFragment : Fragment(), WorksView {
         Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
     }
 
+    override fun showProgress() {
+//        worksRecyclerView.isVisible = false
+        worksRecyclerView.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideProgress() {
+        worksRecyclerView.isVisible = true
+//        worksRecyclerView.visibility = View.GONE
+        progressBar.visibility = View.GONE
+    }
 }

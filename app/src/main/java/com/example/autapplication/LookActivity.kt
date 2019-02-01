@@ -1,6 +1,7 @@
 package com.example.autapplication
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,7 +11,9 @@ import com.example.autapplication.works.HomeActivity
 import kotlinx.android.synthetic.main.activity_look.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.support.v4.view.ViewCompat
+import android.widget.AutoCompleteTextView
 import com.example.autapplication.model.response.ServerResponse
+import com.example.autapplication.model.response.Work
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +57,7 @@ class LookActivity : AppCompatActivity() {
                 finish()
             }, 500)
         }
+
 
     }
 }
