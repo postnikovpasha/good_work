@@ -37,4 +37,10 @@ class AuthActivity : AppCompatActivity() {
     private fun checkPassword(password: String): Boolean{
         return password == "12345"
     }
+
+    override fun onResume() {
+        super.onResume()
+
+
+    }
 }

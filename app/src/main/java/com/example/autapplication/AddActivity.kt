@@ -12,12 +12,21 @@ import kotlinx.android.synthetic.main.activity_add.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.support.v7.widget.Toolbar
+
 
 class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
+
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
 
         btnAdd.setOnClickListener {
             val work: Work = Work(
