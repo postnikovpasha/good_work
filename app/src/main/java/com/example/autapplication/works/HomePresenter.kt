@@ -48,6 +48,7 @@ class HomePresenter {
                 }
 
                 override fun onResponse(call: Call<List<Work>>, response: Response<List<Work>>) {
+                    view?.hideProgress()
                     val works = response.body()
 
                     if (works != null) {
