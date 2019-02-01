@@ -44,7 +44,7 @@ class AddActivity : AppCompatActivity() {
                     }
 
                     override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
-                        showError("good")
+//                        showError("good")
                     }
                 })
            //it.startAnimation(AnimationUtils.loadAnimation(this,R.anim.scale))
