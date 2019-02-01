@@ -32,6 +32,7 @@ class AuthActivity : AppCompatActivity(), SignInView {
 
         btnSignUp.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
+                .putExtra("customer","user")
             startActivity(intent)
 
             val scale = AnimationUtils.loadAnimation(this, R.anim.scale)
@@ -56,7 +57,7 @@ class AuthActivity : AppCompatActivity(), SignInView {
     override fun navigateToHomeScreen() {
         finish()
         val intent = Intent(this, HomeActivity::class.java)
-            .putExtra("Customer",loginEditText.text.toString())
+            .putExtra("customer",loginEditText.text.toString())
         startActivity(intent)
     }
 

@@ -21,6 +21,7 @@ import com.example.autapplication.R
 
 class HomeFragment : Fragment(), WorksView {
 
+    var cust: String = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -51,7 +52,8 @@ class HomeFragment : Fragment(), WorksView {
             .putExtra("title", work.problem_title)
             .putExtra("description", work.problem_description)
             .putExtra("coins", work.coins)
-            .putExtra("customer", work.customer)
+            .putExtra("customer",cust)
+
 
         startActivity(intent)
     }
@@ -59,6 +61,8 @@ class HomeFragment : Fragment(), WorksView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val customer = getArguments()?.getString("customer")
+        cust = customer.toString()
 
 
         worksRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -66,6 +70,7 @@ class HomeFragment : Fragment(), WorksView {
 
         fab.setOnClickListener {
             val intent = Intent(context, AddActivity::class.java)
+               .putExtra("customer",customer)
             startActivity(intent)
         }
 

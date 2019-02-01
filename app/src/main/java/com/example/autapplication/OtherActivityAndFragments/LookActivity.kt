@@ -31,16 +31,13 @@ class LookActivity : AppCompatActivity() {
         coinsTextView.text = arguments.getString("coins")
         val customer = arguments.getString("customer")
 
-        if(customer != "mamauser")
-            btnDone.visibility = View.GONE
-
         btnBack2.setOnClickListener {
             finish()
         }
 
         btnDone.setOnClickListener {
             App.api
-                .decideWork("user", titleTextView.text.toString())
+                .decideWork(customer, titleTextView.text.toString())
                 .enqueue(object : Callback<ServerResponse> {
                     override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
                         Toast.makeText(this@LookActivity, "Not done",Toast.LENGTH_SHORT).show()
@@ -60,6 +57,8 @@ class LookActivity : AppCompatActivity() {
 
             Handler().postDelayed({
                 val intent = Intent(this, HomeActivity::class.java)
+                    .putExtra("customer",customer)
+                //Toast.makeText(this,customer,Toast.LENGTH_SHORT).show()
                 startActivity(intent)
                 finish()
             }, 500)

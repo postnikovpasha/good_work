@@ -16,15 +16,15 @@ class ProfilePresenter{
         this.view = view
     }
 
-    fun onViewShown() {
-        updateCoins()
+    fun onViewShown(login:String) {
+        updateCoins(login)
     }
 
-    private fun updateCoins() {
+    fun updateCoins(login:String) {
 
 
         App.api
-            .getCoins("user")
+            .getCoins(login)
             .enqueue(object : Callback<CoinsResponse> {
 
                 override fun onFailure(call: Call<CoinsResponse>, t: Throwable) {

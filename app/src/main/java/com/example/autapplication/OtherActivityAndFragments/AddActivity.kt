@@ -21,6 +21,8 @@ class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
+        val arg = intent.extras ?: return
+        val customer: String = arg.getString("customer")
 
 
         btnBack.setOnClickListener {
@@ -32,7 +34,7 @@ class AddActivity : AppCompatActivity() {
             val work: Work = Work(
                 problem_title = titleEditText.text.toString(),
                 problem_description = descriptionEditText.text.toString(),
-                customer = "user",
+                customer = customer,
                 coins = coinsEditText.text.toString())
 
             if(checkItem(work.problem_title, work.problem_description, work.coins)) {
@@ -44,12 +46,14 @@ class AddActivity : AppCompatActivity() {
                             showError("Not sent")
                             Handler().postDelayed({
                                 val intent = Intent(this@AddActivity, HomeActivity::class.java)
+                                    .putExtra("customer",customer)
                                 startActivity(intent)},200)
                         }
 
                         override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
                             Handler().postDelayed({
                                 val intent = Intent(this@AddActivity, HomeActivity::class.java)
+                                    .putExtra("customer",customer)
                                 startActivity(intent)},200)
                         }
                     })
