@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LookActivity"></activity>
+        <activity android:name=".LookActivity"
+                  android:screenOrientation="portrait"
+        ></activity>
         <activity android:name=".SplashActivity">
+            android:screenOrientation="portrait"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,13 +30,9 @@
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".works.HomeActivity"
-            android:label="Main2Activity"
             android:screenOrientation="portrait"
+            android:label="Main2Activity"
             android:windowSoftInputMode="adjustPan"></activity>
-        <activity
-            android:name=".SetActivity"
-            android:label="@string/title_activity_set"
-            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".AuthActivity"
             android:screenOrientation="portrait"
