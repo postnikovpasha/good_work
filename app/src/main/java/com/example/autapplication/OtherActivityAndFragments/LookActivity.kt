@@ -4,12 +4,14 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.Toast
 import com.example.autapplication.Works.HomeActivity
 import kotlinx.android.synthetic.main.activity_look.*
 import com.example.autapplication.R
 import com.example.autapplication.Model.Response.ServerResponse
-import kotlinx.android.synthetic.main.works_item.*
+import com.example.autapplication.Model.Response.Work
+import kotlinx.android.synthetic.main.activity_add.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,8 +29,7 @@ class LookActivity : AppCompatActivity() {
         titleTextView.text = arguments.getString("title")
         descriptionTextView.text = arguments.getString("description")
         coinsTextView.text = arguments.getString("coins")
-
-        val customer: String = arguments.getString("customer")
+        val customer = arguments.getString("customer")
 
         btnBack2.setOnClickListener {
             finish()
