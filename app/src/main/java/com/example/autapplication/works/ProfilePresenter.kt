@@ -6,9 +6,13 @@ import com.example.autapplication.model.response.CoinsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
+import android.view.View
 
 
 class ProfilePresenter{
+
     private var view: CoinsView? = null
 
     fun bindView(view: CoinsView) {
@@ -20,6 +24,8 @@ class ProfilePresenter{
     }
 
     private fun updateCoins() {
+
+
         App.api
             .getCoins("user")
             .enqueue(object : Callback<CoinsResponse> {
@@ -40,6 +46,7 @@ class ProfilePresenter{
 
         if (works != null) {
             view?.showCoins(works.coins)
+            view?.showCustomer(works.login)
         }
     }
 }

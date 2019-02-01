@@ -27,6 +27,8 @@ class ProfileFragment : Fragment(), CoinsView{
         presenter.bindView(this)
         presenter.onViewShown()
 
+
+
         btnChange.setOnClickListener{
             val scale = AnimationUtils.loadAnimation(requireContext(), R.anim.scale)
             it.startAnimation(scale)
@@ -44,5 +46,9 @@ class ProfileFragment : Fragment(), CoinsView{
 
     override fun showMessage(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showCustomer(login: String) {
+        customerName?.text = login
     }
 }

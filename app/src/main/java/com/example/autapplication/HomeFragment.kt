@@ -59,6 +59,7 @@ class HomeFragment : Fragment(), WorksView {
         super.onViewCreated(view, savedInstanceState)
 
 
+
         worksRecyclerView.layoutManager = LinearLayoutManager(context)
         worksRecyclerView.adapter = adapter
 
@@ -107,7 +108,7 @@ class HomeFragment : Fragment(), WorksView {
     }
 
     override fun showMessage(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     override fun showProgress() {
