@@ -20,11 +20,14 @@ class HomePresenter {
     }
 
     private fun updateWorks() {
+        view?.showProgress()
+
         App.api
             .getAllWorks()
             .enqueue(object : Callback<List<Work>> {
                 override fun onFailure(call: Call<List<Work>>, t: Throwable) {
                     Log.e("asd", t.message)
+                    view?.hideProgress()
                     view?.showMessage("Error: Unable connect to server")
 
                     view?.showWorks(listOf(
@@ -45,11 +48,13 @@ class HomePresenter {
                 }
 
                 override fun onResponse(call: Call<List<Work>>, response: Response<List<Work>>) {
+                    view?.hideProgress()
                     val works = response.body()
 
                     if (works != null) {
                         view?.showWorks(works)
                     }
+
                 }
             })
     }
