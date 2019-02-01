@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.example.autapplication.HomeFragment
 import com.example.autapplication.R
-import com.example.autapplication.SetFragment
+import com.example.autapplication.ProfileFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.action_settings -> {
-                    val setFragment = SetFragment.newInstance()
+                    val setFragment = ProfileFragment.newInstance()
                     openFragment(setFragment)
                     true
                 }

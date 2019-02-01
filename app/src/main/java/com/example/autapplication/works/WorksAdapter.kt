@@ -10,7 +10,7 @@ import android.widget.Toast
 import com.example.autapplication.LookActivity
 import com.example.autapplication.R
 import com.example.autapplication.model.response.Work
-import kotlinx.android.synthetic.main.fragment_set.view.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 import kotlinx.android.synthetic.main.works_item.view.*
 
 class WorksAdapter(private val onWorkClick: (Work) -> Unit) : RecyclerView.Adapter<WorkHolder>() {
