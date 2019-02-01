@@ -52,7 +52,8 @@ class HomeFragment : Fragment(), WorksView {
             .putExtra("title", work.problem_title)
             .putExtra("description", work.problem_description)
             .putExtra("coins", work.coins)
-            .putExtra("customer",cust)
+            .putExtra("login_customer",cust)
+            .putExtra("work_customers", work.customer)
 
 
         startActivity(intent)

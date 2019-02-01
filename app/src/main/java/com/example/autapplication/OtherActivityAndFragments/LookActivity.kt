@@ -29,7 +29,11 @@ class LookActivity : AppCompatActivity() {
         titleTextView.text = arguments.getString("title")
         descriptionTextView.text = arguments.getString("description")
         coinsTextView.text = arguments.getString("coins")
-        val customer = arguments.getString("customer")
+        val customer = arguments.getString("work_customer")
+        val login = arguments.getString("login_customer")
+
+        if(customer!= login)
+            btnDone.visibility = View.GONE
 
         btnBack2.setOnClickListener {
             finish()
