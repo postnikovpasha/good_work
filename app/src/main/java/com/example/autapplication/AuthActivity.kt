@@ -39,6 +39,10 @@ class AuthActivity : AppCompatActivity() {
                 Toast.makeText(this, "Login or password is incorrect",Toast.LENGTH_SHORT).show()
             }
         }
+btnSignUp.setOnClickListener{
+    val scale = AnimationUtils.loadAnimation(this, R.anim.scale)
+    it.startAnimation(scale)
+}
     }
 
     private fun checkLogin (login: String): Boolean {
