@@ -9,6 +9,7 @@ import com.example.autapplication.Works.HomeActivity
 import kotlinx.android.synthetic.main.activity_look.*
 import com.example.autapplication.R
 import com.example.autapplication.Model.Response.ServerResponse
+import kotlinx.android.synthetic.main.works_item.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,13 +28,15 @@ class LookActivity : AppCompatActivity() {
         descriptionTextView.text = arguments.getString("description")
         coinsTextView.text = arguments.getString("coins")
 
+        val customer: String = arguments.getString("customer")
+
         btnBack2.setOnClickListener {
             finish()
         }
 
         btnDone.setOnClickListener {
             App.api
-                .decideWork("user", titleTextView.text.toString())
+                .decideWork(customer, titleTextView.text.toString())
                 .enqueue(object : Callback<ServerResponse> {
                     override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
                         Toast.makeText(this@LookActivity, "Not done",Toast.LENGTH_SHORT).show()
@@ -53,6 +56,8 @@ class LookActivity : AppCompatActivity() {
 
             Handler().postDelayed({
                 val intent = Intent(this, HomeActivity::class.java)
+                    .putExtra("customer",customer)
+                //Toast.makeText(this,customer,Toast.LENGTH_SHORT).show()
                 startActivity(intent)
                 finish()
             }, 500)
