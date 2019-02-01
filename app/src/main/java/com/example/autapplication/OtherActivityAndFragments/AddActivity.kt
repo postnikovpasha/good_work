@@ -1,21 +1,19 @@
-package com.example.autapplication
+package com.example.autapplication.OtherActivityAndFragments
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import com.example.autapplication.model.response.ServerResponse
-import com.example.autapplication.model.response.Work
-import com.example.autapplication.works.HomeActivity
+import com.example.autapplication.Model.Response.ServerResponse
+import com.example.autapplication.Model.Response.Work
+import com.example.autapplication.Works.HomeActivity
 import kotlinx.android.synthetic.main.activity_add.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.support.v7.widget.Toolbar
-import kotlinx.android.synthetic.main.works_item.*
+import com.example.autapplication.R
 
 
 class AddActivity : AppCompatActivity() {

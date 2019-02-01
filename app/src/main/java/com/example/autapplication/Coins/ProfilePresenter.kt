@@ -1,14 +1,11 @@
-package com.example.autapplication.works
+package com.example.autapplication.Coins
 
 import android.util.Log
-import com.example.autapplication.App
-import com.example.autapplication.model.response.CoinsResponse
+import com.example.autapplication.OtherActivityAndFragments.App
+import com.example.autapplication.Model.Response.CoinsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import android.view.View
 
 
 class ProfilePresenter{

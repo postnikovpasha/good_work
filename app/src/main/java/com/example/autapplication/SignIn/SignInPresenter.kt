@@ -1,14 +1,11 @@
-package com.example.autapplication.works
+package com.example.autapplication.SignIn
 
-import android.content.Intent
 import android.util.Log
-import com.example.autapplication.App
-import com.example.autapplication.AuthActivity
-import com.example.autapplication.model.response.SignInResponse
+import com.example.autapplication.OtherActivityAndFragments.App
+import com.example.autapplication.Model.Response.SignInResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class SignInPresenter {
 

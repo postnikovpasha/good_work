@@ -1,7 +1,7 @@
-package com.example.autapplication
+package com.example.autapplication.OtherActivityAndFragments
 
 import android.app.Application
-import com.example.autapplication.model.api.Api
+import com.example.autapplication.Model.Api.Api
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
