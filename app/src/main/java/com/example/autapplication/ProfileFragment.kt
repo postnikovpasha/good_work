@@ -7,25 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.autapplication.model.response.Work
+import com.example.autapplication.works.CoinsView
+import com.example.autapplication.works.ProfilePresenter
 import com.example.autapplication.works.WorksView
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.works_item.*
 
 
-class ProfileFragment : Fragment() , WorksView{
-    override fun showWorks(works: List<Work>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class ProfileFragment : Fragment(), CoinsView{
 
-    override fun showMessage(message: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    private val presenter = ProfilePresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_profile, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        presenter.bindView(this)
+        presenter.onViewShown()
 
         btnChange.setOnClickListener{
             Toast.makeText(requireContext(), "Oops..out of service", Toast.LENGTH_LONG).show()
@@ -36,7 +35,11 @@ class ProfileFragment : Fragment() , WorksView{
         fun newInstance(): ProfileFragment = ProfileFragment()
     }
 
-    override fun showCoins(coins: String) {
-        coinsSum.text = coins
+    override fun showCoins(coins: Int) {
+        coinsSum.text = coins.toString()
+    }
+
+    override fun showMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
     }
 }

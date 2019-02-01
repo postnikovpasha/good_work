@@ -1,5 +1,6 @@
 package com.example.autapplication.model.api
 
+import com.example.autapplication.model.response.CoinsResponse
 import com.example.autapplication.model.response.ServerResponse
 import com.example.autapplication.model.response.Work
 import retrofit2.Call
@@ -21,6 +22,6 @@ interface Api {
                  @Query("coins") coins: String): Call<ServerResponse>
 
     @GET("user")
-    fun getCoins(@Query("login") login: String): Call<ServerResponse>
+    fun getCoins(@Query("login") login: String): Call<CoinsResponse>
 
 }
