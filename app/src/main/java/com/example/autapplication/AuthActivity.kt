@@ -3,6 +3,8 @@ package com.example.autapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import com.example.autapplication.works.HomeActivity
@@ -22,9 +24,18 @@ class AuthActivity : AppCompatActivity() {
 
 
             if(checkLogin(login) && checkPassword(password)) {
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
+                val scale = AnimationUtils.loadAnimation(this, R.anim.scale)
+                it.startAnimation(scale)
+
+                Handler().postDelayed({
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)},
+                    200)
+
+
             } else {
+                val scale = AnimationUtils.loadAnimation(this, R.anim.scale)
+                it.startAnimation(scale)
                 Toast.makeText(this, "Login or password is incorrect",Toast.LENGTH_SHORT).show()
             }
         }
