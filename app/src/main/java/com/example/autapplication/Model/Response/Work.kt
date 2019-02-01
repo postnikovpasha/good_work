@@ -1,4 +1,4 @@
-package com.example.autapplication.model.response
+package com.example.autapplication.Model.Response
 
 class Work(
    // val id: String,

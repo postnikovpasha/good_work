@@ -1,4 +1,4 @@
-package com.example.autapplication.worksdetails
+package com.example.autapplication.Worksdetails
 
 import android.support.v7.app.AppCompatActivity
 

@@ -1,14 +1,15 @@
-package com.example.autapplication.works
+package com.example.autapplication.Coins
 
 import android.util.Log
-import com.example.autapplication.App
-import com.example.autapplication.model.response.CoinsResponse
+import com.example.autapplication.OtherActivityAndFragments.App
+import com.example.autapplication.Model.Response.CoinsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class ProfilePresenter{
+
     private var view: CoinsView? = null
 
     fun bindView(view: CoinsView) {
@@ -20,6 +21,8 @@ class ProfilePresenter{
     }
 
     private fun updateCoins() {
+
+
         App.api
             .getCoins("user")
             .enqueue(object : Callback<CoinsResponse> {
@@ -40,6 +43,7 @@ class ProfilePresenter{
 
         if (works != null) {
             view?.showCoins(works.coins)
+            view?.showCustomer(works.login)
         }
     }
 }

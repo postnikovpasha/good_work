@@ -1,4 +1,4 @@
-package com.example.autapplication
+package com.example.autapplication.Coins
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,15 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import com.example.autapplication.model.response.Work
-import com.example.autapplication.works.CoinsView
-import com.example.autapplication.works.ProfilePresenter
-import com.example.autapplication.works.WorksView
+import com.example.autapplication.R
 import kotlinx.android.synthetic.main.fragment_profile.*
-import kotlinx.android.synthetic.main.works_item.*
 
 
-class ProfileFragment : Fragment(), CoinsView{
+class ProfileFragment : Fragment(), CoinsView {
 
     private val presenter = ProfilePresenter()
 
@@ -27,15 +23,18 @@ class ProfileFragment : Fragment(), CoinsView{
         presenter.bindView(this)
         presenter.onViewShown()
 
+
+
         btnChange.setOnClickListener{
             val scale = AnimationUtils.loadAnimation(requireContext(), R.anim.scale)
             it.startAnimation(scale)
-            Toast.makeText(requireContext(), "Oops..out of service", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Oops..out of service", Toast.LENGTH_SHORT).show()
         }
     }
 
     companion object {
-        fun newInstance(): ProfileFragment = ProfileFragment()
+        fun newInstance(): ProfileFragment =
+            ProfileFragment()
     }
 
     override fun showCoins(coins: Int) {
@@ -43,6 +42,10 @@ class ProfileFragment : Fragment(), CoinsView{
     }
 
     override fun showMessage(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showCustomer(login: String) {
+        customerName?.text = login
     }
 }

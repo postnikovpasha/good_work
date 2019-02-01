@@ -1,12 +1,8 @@
-package com.example.autapplication.works
+package com.example.autapplication.Works
 
-import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
-import com.example.autapplication.AddActivity
-import com.example.autapplication.App
-import com.example.autapplication.model.api.Api
-import com.example.autapplication.model.response.Work
+import com.example.autapplication.OtherActivityAndFragments.App
+import com.example.autapplication.Model.Response.Work
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
