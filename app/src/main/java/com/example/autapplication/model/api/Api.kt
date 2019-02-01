@@ -2,6 +2,7 @@ package com.example.autapplication.model.api
 
 import com.example.autapplication.model.response.CoinsResponse
 import com.example.autapplication.model.response.ServerResponse
+import com.example.autapplication.model.response.SignInResponse
 import com.example.autapplication.model.response.Work
 import retrofit2.Call
 import retrofit2.http.Body
@@ -26,5 +27,10 @@ interface Api {
 
     @GET("user")
     fun getCoins(@Query("login") login: String): Call<CoinsResponse>
+
+    @GET("login")
+    fun signIn(@Query("login") login: String,
+               @Query("password") password: String
+    ): Call<SignInResponse>
 
 }
