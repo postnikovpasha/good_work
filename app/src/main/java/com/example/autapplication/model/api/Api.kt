@@ -19,6 +19,9 @@ interface Api {
                  @Query("description") problem_description: String,
                  @Query("customer") customer: String,
                  @Query("coins") coins: String): Call<ServerResponse>
+    @GET("decide_task")
+    fun decideWork(@Query("extend") customer: String,
+                   @Query("problem_title") problem_title: String): Call<ServerResponse>
 
     @GET("user?login")
     fun getCoins(@Query("customer") customer: String): Call<ServerResponse>

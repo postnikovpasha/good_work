@@ -10,7 +10,10 @@ import com.example.autapplication.works.HomeActivity
 import kotlinx.android.synthetic.main.activity_look.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.support.v4.view.ViewCompat
-
+import com.example.autapplication.model.response.ServerResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class LookActivity : AppCompatActivity() {
@@ -26,7 +29,17 @@ class LookActivity : AppCompatActivity() {
         coinsTextView.text = arguments.getString("coins")
 
         btnDone.setOnClickListener {
-            Toast.makeText(this, "Error: Unable connect to server",Toast.LENGTH_SHORT).show()
+            App.api
+                .decideWork("user", titleTextView.text.toString())
+                .enqueue(object : Callback<ServerResponse> {
+                    override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
+//                        Toast.makeText(, "Error: Unable connect to server",Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
+
+                    }
+                })
 
             doneImageView.animate()
                 .scaleX(1F)
