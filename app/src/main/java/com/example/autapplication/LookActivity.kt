@@ -25,11 +25,16 @@ class LookActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_look)
 
+
         val arguments = intent.extras ?: return
 
         titleTextView.text = arguments.getString("title")
         descriptionTextView.text = arguments.getString("description")
         coinsTextView.text = arguments.getString("coins")
+
+        btnBack2.setOnClickListener {
+            finish()
+        }
 
         btnDone.setOnClickListener {
             App.api

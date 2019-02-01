@@ -31,18 +31,18 @@ class HomePresenter {
                     view?.showMessage("Error: Unable connect to server")
 
                     view?.showWorks(listOf(
-                        Work("Vitya","SSD (fake)","Need SSD","35"),
-                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
-                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
-                        Work("Vitya","SSD (fake)","Need SSD","35"),
-                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
-                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
-                        Work("Vitya","SSD (fake)","Need SSD","35"),
-                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
-                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20"),
-                        Work("Vitya","SSD (fake)","Need SSD","35"),
-                        Work("Andrey","Xiaomi (fake)","Xiaomi ludshe and deshevle","10"),
-                        Work("Pasha","TN Matrica (fake)","Moi glazaaa", "20")
+                        Work("Vitya","Transfer grandmother (fake)","Transfer grandmother across the road","15"),
+                        Work("Andrey","Warm up the car (fake)","Warm up my car. She froze","30"),
+                        Work("Pasha","Buy Xiaomi (fake)","Buy xiaomi pleeeeeas", "1000"),
+                        Work("Vitya","Raise server (fake)","Again the server fell, please raise","35"),
+                        Work("Andrey","Stop (fake)","Vite need to go out","10"),
+                        Work("Pasha","Reinstall Windows (fake)","Windows fucked up again", "20"),
+                        Work("Vitya","Who has an adapter for the VGA? (fake)","Zazhralsya and bought a new Macbook","35"),
+                        Work("Andrey","Android vs IOS (fake)","Android is better, but I have an iphone","10"),
+                        Work("Pasha","I want to cft.team (fake)","Take me please", "99999"),
+                        Work("Vitya","Ran out of pies (fake)","And I just came","35"),
+                        Work("Andrey","When is afterparty? (fake)","do not mind it","10"),
+                        Work("Pasha","Give a tour in cft (fake)","Go?", "20")
                     ))
 
                 }
