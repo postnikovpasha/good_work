@@ -59,10 +59,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        Toast.makeText(this,"Restart",Toast.LENGTH_SHORT).show()
-    }
 
     private fun openFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
