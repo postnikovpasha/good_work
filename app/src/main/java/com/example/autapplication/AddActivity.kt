@@ -3,7 +3,9 @@ package com.example.autapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.example.autapplication.model.response.ServerResponse
 import com.example.autapplication.model.response.Work
@@ -37,10 +39,16 @@ class AddActivity : AppCompatActivity() {
                         showError("good")
                     }
                 })
+           //it.startAnimation(AnimationUtils.loadAnimation(this,R.anim.scale))
+
+            val scale = AnimationUtils.loadAnimation(this, R.anim.scale)
+            it.startAnimation(scale)
+
+            Handler().postDelayed({
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)},200)
 
 
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
         }
     }
 

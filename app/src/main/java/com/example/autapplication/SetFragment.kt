@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_set.*
@@ -22,6 +23,8 @@ class SetFragment : Fragment() {
 
 
         btnChange.setOnClickListener{
+            val scale = AnimationUtils.loadAnimation(requireContext(), R.anim.scale)
+            it.startAnimation(scale)
             Toast.makeText(requireContext(), "Oops..out of service", Toast.LENGTH_LONG).show()
         }
     }
