@@ -1,12 +1,18 @@
 package com.example.autapplication.Works
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.example.autapplication.OtherActivityAndFragments.HomeFragment
 import com.example.autapplication.R
 import com.example.autapplication.Coins.ProfileFragment
 import kotlinx.android.synthetic.main.activity_home.*
+
+
+
+
 
 
 class HomeActivity : AppCompatActivity() {
@@ -14,35 +20,41 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-//        val customer = intent.extras?: return
-//
-//        val sPref: SharedPreferences = getPreferences(MODE_PRIVATE);
-//            sPref.edit().putString("login", customer.toString());
-//            sPref.edit().commit();
+        setContentView(com.example.autapplication.R.layout.activity_home)
 
+        val arg = intent.extras
 
+        val customer: String = arg.getString("customer")
 
         val homeFragment = HomeFragment.newInstance()
+        val bundle = Bundle()
+        bundle.putString("customer",customer)
+        homeFragment.setArguments(bundle)
         openFragment(homeFragment)
 
 
         navigation.setOnNavigationItemSelectedListener {
-            val fragment = supportFragmentManager.findFragmentById(R.id.container)
+            val fragment = supportFragmentManager.findFragmentById(com.example.autapplication.R.id.container)
 
             when (it.itemId) {
-                R.id.action_search -> {
+                com.example.autapplication.R.id.action_search -> {
                     if (fragment !is HomeFragment) {
                         val homeFragment = HomeFragment.newInstance()
+                        val bundle = Bundle()
+                        bundle.putString("customer",customer)
+                        homeFragment.setArguments(bundle)
                         openFragment(homeFragment)
                     }
 
                     true
                 }
 
-                R.id.action_settings -> {
+                com.example.autapplication.R.id.action_settings -> {
                     if (fragment !is ProfileFragment) {
                         val setFragment = ProfileFragment.newInstance()
+                        val bundle = Bundle()
+                        bundle.putString("customer",customer)
+                        setFragment.setArguments(bundle)
                         openFragment(setFragment)
                     }
 
@@ -54,11 +66,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
         supportFragmentManager.addOnBackStackChangedListener {
-            val fragment = supportFragmentManager.findFragmentById(R.id.container)
+            val fragment = supportFragmentManager.findFragmentById(com.example.autapplication.R.id.container)
 
             navigation.selectedItemId = when(fragment) {
-                is HomeFragment ->  R.id.action_search
-                is ProfileFragment -> R.id.action_settings
+                is HomeFragment ->  com.example.autapplication.R.id.action_search
+                is ProfileFragment -> com.example.autapplication.R.id.action_settings
                 else -> -1
             }
         }
@@ -67,7 +79,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun openFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(com.example.autapplication.R.id.container, fragment)
                 .addToBackStack(null)
                 .commit()
     }
@@ -80,3 +92,4 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 }
+
